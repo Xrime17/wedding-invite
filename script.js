@@ -3,15 +3,33 @@ const music = document.getElementById('bgMusic');
 music.volume = 0.3;  // Уменьшаем громкость
 
 function toggleMusic() {
-    if (music.paused) {
-        music.play();
-        document.getElementById('musicToggle').textContent = '🔊 Выключить музыку';
-    } else {
-        music.pause();
-        document.getElementById('musicToggle').textContent = '🔊 Включить музыку';
+    const music = document.getElementById('music');
+    if (!music) {
+      console.error("Аудио-элемент не найден!");
+      return;
     }
-}
-
+    
+    if (music.paused) {
+      music.play()
+        .then(() => {
+          document.getElementById('musicBtn').textContent = '🔊 Выключить';
+        })
+        .catch(error => {
+          console.error("Ошибка воспроизведения:", error);
+        });
+    } else {
+      music.pause();
+      document.getElementById('musicBtn').textContent = '🔊 Включить';
+    }
+  }
+  
+  // Инициализация после загрузки страницы
+  document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('music');
+    if (music) {
+      music.volume = 0.3; // Установка громкости
+    }
+  });
 // Отправка формы
 document.getElementById('guestForm').addEventListener('submit', function(e) {
     e.preventDefault();

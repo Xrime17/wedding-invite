@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="music">
+        <source src="assets/music/domino-krasivaja.mp3" type="audio/mpeg">
+      </audio>
+    </audio>
+
+    <!-- Кнопка музыки -->
+    <button id="musicBtn" onclick="toggleMusic()">🔊 Включить музыку</button>
+
+    <!-- Основное содержимое -->
+    <div class="container">
+        <section class="header">
+            <h1>Евгений & Валентина</h1>
+            <p>27/04/2025</p>
+            <p class="tagline">Вы приглашены на нашу свадьбу!</p>
+        </section>
+
+        <section class="form">
+            <h2>Подтвердите участие</h2>
+            <form id="inviteForm">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email" required>
+                <label>
+                    <input type="checkbox" name="attending"> Я буду
+                </label>
+                <textarea placeholder="Ваши пожелания..."></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+
+        <section class="footer">
+            <p>Ждём вас!</p>
+            <a href="https://wedwed.ru" target="_blank">wedwed.ru</a>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

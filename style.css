@@ -2,54 +2,98 @@ body {
     font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
-    background: url('assets/bg.jpg') no-repeat center/cover;
-    color: #fff;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffebf3 50%, #fff0f5 100%);
+    color: #5a4a42;
     min-height: 100vh;
-}
-
-#musicBtn {
+    overflow-x: hidden;
+  }
+  
+  /* Декоративные элементы */
+  body::before {
+    content: "";
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffd6e7" opacity="0.2" d="M30,50 Q50,30 70,50 T90,50 T70,70 T50,90 T30,70 T10,50 T30,30 Z"/></svg>');
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .invitation {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
-h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-input, textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button[type="submit"] {
-    background: #d4af37;
-    color: #000;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(255, 245, 240, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .invitation::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23f8c8dc" d="M20,50 Q50,20 80,50 T50,80 T20,50 Z"/></svg>');
+    opacity: 0.3;
+  }
+  
+  h1 {
+    color: #d48a94;
+    font-size: 3.2em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  /* Кнопки и форма */
+  button, input, textarea {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e8c4c4;
+    transition: all 0.3s ease;
+  }
+  
+  button {
+    background: linear-gradient(to right, #f8c8dc, #d4a5b5);
+    color: white;
     padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #d4a5b5, #f8c8dc);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 138, 148, 0.3);
+  }
+  
+  /* Декоративные разделители */
+  section {
+    position: relative;
+    padding: 40px 0;
+  }
+  
+  section::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #d48a94, transparent);
+    margin: 20px auto;
+    /* Стили для чекбоксов */
+.checkbox label:hover {
+    color: #d48a94; /* Нежно-розовый цвет при наведении */
+    transition: color 0.3s ease; /* Плавное изменение */
+  }
+  
+  /* Стили для полей ввода */
+  textarea:focus, 
+  input:focus {
+    border-color: #d48a94; /* Розовая рамка при фокусе */
+    box-shadow: 0 0 0 2px rgba(212, 138, 148, 0.2); /* Мягкое свечение */
+    outline: none; /* Убираем стандартный outline */
+    transition: all 0.3s ease; /* Плавные анимации */
+  }
+  }

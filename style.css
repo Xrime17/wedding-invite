@@ -41,7 +41,7 @@
   body {
     font-family: var(--font-body);
     color: var(--text);
-    background-color: var(--secondary);
+    background-color: #d17979;
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;

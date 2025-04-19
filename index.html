@@ -3,201 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анна & Михаил | Свадьба 15.07.2024</title>
-    <meta name="description" content="Приглашение на свадьбу Анны и Михаила 15 июля 2024 года">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="wedding-invite/style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Приглашение на нашу свадьбу</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes confetti {
+            0% { 
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(500px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fff9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://example.com/floral-pattern.png');
+            background-size: cover;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        h1 {
+            color: #d4a373;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+        
+        .names {
+            font-size: 3em;
+            font-weight: bold;
+            color: #a25b5b;
+            margin: 20px 0;
+            animation: scaleIn 1s ease-out 0.6s both;
+        }
+        
+        .and {
+            font-size: 1.5em;
+            margin: 10px 0;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+        
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-out 1.2s both;
+        }
+        
+        .date {
+            font-size: 1.8em;
+            color: #d4a373;
+            margin: 30px 0;
+            animation: slideUp 1s ease-out 1.5s both;
+        }
+        
+        .place {
+            font-size: 1.5em;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-out 1.8s both;
+        }
+        
+        .dress-code {
+            background-color: #f8edeb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 30px 0;
+            animation: slideUp 1s ease-out 2.1s both;
+        }
+        
+        button {
+            background-color: #d4a373;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite 3s;
+        }
+        
+        button:hover {
+            background-color: #a25b5b;
+            transform: scale(1.05);
+            animation: none;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .flower {
+            font-size: 2em;
+            margin: 0 5px;
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0);
+            animation: fadeIn 0.5s ease-out forwards, float 3s ease-in-out infinite;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            font-style: italic;
+            color: #888;
+            animation: fadeIn 1s ease-out 2.4s both;
+        }
+        
+        .map {
+            height: 300px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: scaleIn 1s ease-out 2.7s both;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 1000;
+        }
+        
+        .heart {
+            color: #ff6b6b;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+            
+            .names {
+                font-size: 2em;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Фоновые элементы -->
-    <div id="petals" class="petals-container"></div>
-    
-    <!-- Аудио плеер (скрытый) -->
-    <audio id="music" loop>
-        <source src="assets/wedding-music.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио элемент.
-    </audio>
-    
-    <!-- Кнопка управления музыкой -->
-    <button id="musicBtn" class="music-btn" aria-label="Управление музыкой">♪</button>
-    
-    <!-- Основное содержимое -->
-    <main>
-        <!-- Герой-секция -->
-        <section class="hero" aria-labelledby="mainHeading">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 id="mainHeading">Валя <span class="cursive">&</span> Женя</h1>
-                    <h2>Приглашаем вас на нашу свадьбу</h2>
-                    <p class="date">15 Июля 2024</p>
-                </div>
-                <a href="#couple" class="scroll-down" aria-label="Прокрутить вниз">↓</a>
+    <div class="container">
+        <div id="invitation">
+            <div class="flower" style="animation-delay: 0.2s">🌸</div>
+            <h1>Дорогие друзья и родные!</h1>
+            <p>С радостью приглашаем вас разделить с нами самый важный день в нашей жизни</p>
+            
+            <div class="names">
+                <div>Анна</div>
+                <div class="and">&</div>
+                <div>Дмитрий</div>
             </div>
-        </section>
-        
-        <!-- Секция пары -->
-        <section id="couple" class="section couple-section" aria-labelledby="coupleHeading">
-            <div class="container">
-                <h2 id="coupleHeading" class="section-title">Жених и Невеста</h2>
-                <div class="couple-container">
-                    <article class="couple">
-                        <img src="assets/bride.jpg" alt="Невеста Анна" class="couple-img" width="200" height="200">
-                        <h3 class="couple-name">Валентина</h3>
-                        <p>Невеста</p>
-                    </article>
-                    <article class="couple">
-                        <img src="assets/groom.jpg" alt="Жених Михаил" class="couple-img" width="200" height="200">
-                        <h3 class="couple-name">Евгений</h3>
-                        <p>Жених</p>
-                    </article>
-                </div>
+            
+            <div class="date">15 июля 2024 года</div>
+            
+            <button id="showDetails">Открыть приглашение <i class="heart fas fa-heart"></i></button>
+            
+            <div class="footer">
+                <p>Ваше присутствие - самый ценный подарок для нас</p>
             </div>
-        </section>
+        </div>
         
-        <!-- История отношений -->
-        <section class="section story-section" aria-labelledby="storyHeading">
-            <div class="container">
-                <h2 id="storyHeading" class="section-title">Наша история</h2>
-                <div class="timeline">
-                    <article class="timeline-item">
-                        <div class="timeline-content">
-                            <time datetime="2018-06" class="timeline-date">Июнь 2018</time>
-                            <h3>Первая встреча</h3>
-                            <p>Мы познакомились на конференции по веб-разработке в Москве. Валя выступала с докладом, а Женя задал ей вопрос, который перерос в часовую дискуссию за кофе.</p>
-                        </div>
-                        <img src="assets/first-meet.jpg" alt="Первая встреча" class="timeline-img" width="80" height="80">
-                    </article>
-                    <article class="timeline-item">
-                        <div class="timeline-content">
-                            <time datetime="2019-12" class="timeline-date">Декабрь 2019</time>
-                            <h3>Первое свидание</h3>
-                            <p>После года дружеского общения мы наконец отправились на первое официальное свидание в зимний парк. Горячий шоколад и катание на коньках сделали этот день незабываемым.</p>
-                        </div>
-                        <img src="assets/first-date.jpg" alt="Первое свидание" class="timeline-img" width="80" height="80">
-                    </article>
-                    <article class="timeline-item">
-                        <div class="timeline-content">
-                            <time datetime="2022-08" class="timeline-date">Август 2022</time>
-                            <h3>Переезд вместе</h3>
-                            <p>Мы решили съехаться и начали новую главу нашей жизни в уютной квартире с видом на парк. Это было время открытий, компромиссов и бесконечного счастья.</p>
-                        </div>
-                        <img src="assets/living-together.jpg" alt="Совместная жизнь" class="timeline-img" width="80" height="80">
-                    </article>
-                    <article class="timeline-item">
-                        <div class="timeline-content">
-                            <time datetime="2023-05" class="timeline-date">Май 2023</time>
-                            <h3>Предложение</h3>
-                            <p>Во время путешествия по Италии, на закате в Венеции, Женя сделал предложение. Валя, конечно же, сказала "Да!" среди слез радости и аплодисментов случайных прохожих.</p>
-                        </div>
-                        <img src="assets/proposal.jpg" alt="Предложение" class="timeline-img" width="80" height="80">
-                    </article>
-                </div>
+        <div id="details" class="hidden">
+            <div class="flower" style="animation-delay: 0.2s">💐</div>
+            <h1>Свадебное торжество</h1>
+            
+            <p>Мы будем счастливы видеть вас на нашем празднике</p>
+            
+            <div class="date">15 июля 2024 года</div>
+            
+            <div class="place">
+                <p><i class="fas fa-clock"></i> Начало в 16:00</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ресторан "Белая лилия"</p>
+                <p>ул. Цветочная, 15, г. Москва</p>
             </div>
-        </section>
-        
-        <!-- Галерея -->
-        <section class="section gallery-section" aria-labelledby="galleryHeading">
-            <div class="container">
-                <h2 id="galleryHeading" class="section-title">Наши моменты</h2>
-                <div class="gallery">
-                    <figure class="gallery-item">
-                        <img src="assets/gallery1.jpg" alt="Фото 1" class="gallery-img" width="400" height="400">
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="assets/gallery2.jpg" alt="Фото 2" class="gallery-img" width="400" height="400">
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="assets/gallery3.jpg" alt="Фото 3" class="gallery-img" width="400" height="400">
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="assets/gallery4.jpg" alt="Фото 4" class="gallery-img" width="400" height="400">
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="assets/gallery5.jpg" alt="Фото 5" class="gallery-img" width="400" height="400">
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="assets/gallery6.jpg" alt="Фото 6" class="gallery-img" width="400" height="400">
-                    </figure>
-                </div>
+            
+            <div id="map" class="map">
+                <!-- Здесь будет карта -->
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1234567890abcdef&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
             </div>
-        </section>
-        
-        <!-- Детали мероприятия -->
-        <section class="section details-section" aria-labelledby="detailsHeading">
-            <div class="container">
-                <h2 id="detailsHeading" class="section-title">Детали мероприятия</h2>
-                <div class="details-container">
-                    <article class="detail-card">
-                        <div class="detail-icon">💒</div>
-                        <h3>Церемония</h3>
-                        <p><time datetime="2024-07-15T16:00">15 Июля 2024, 16:00</time></p>
-                        <address>Храм Христа Спасителя<br>ул. Волхонка, 15, Москва</address>
-                    </article>
-                    <article class="detail-card">
-                        <div class="detail-icon">🍽️</div>
-                        <h3>Банкет</h3>
-                        <p><time datetime="2024-07-15T18:00">15 Июля 2024, 18:00</time></p>
-                        <address>Ресторан "Белый Лебедь"<br>Пресненская наб., 12, Москва</address>
-                    </article>
-                    <article class="detail-card">
-                        <div class="detail-icon">💃</div>
-                        <h3>После вечеринки</h3>
-                        <p><time datetime="2024-07-16T12:00">16 Июля 2024, 12:00</time></p>
-                        <address>Загородный клуб "Сосны"<br>Московская обл., 25 км от МКАД</address>
-                    </article>
-                </div>
+            
+            <div class="dress-code">
+                <h3><i class="fas fa-tshirt"></i> Дресс-код</h3>
+                <p>Вечерние наряды в пастельных тонах</p>
             </div>
-        </section>
-        
-        <!-- Форма RSVP -->
-        <section class="section rsvp-section" aria-labelledby="rsvpHeading">
-            <div class="container">
-                <h2 id="rsvpHeading" class="section-title">Подтвердите участие</h2>
-                <form id="guestForm" class="rsvp-form" novalidate>
-                    <div class="form-group">
-                        <label for="name">Ваше имя *</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="guests">Количество гостей</label>
-                        <select id="guests" name="guests" class="form-control">
-                            <option value="1">1</option>
-                            <option value="2" selected>2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5+</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Ваши пожелания</label>
-                        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="isAttending" name="isAttending" checked>
-                        <label for="isAttending">Я с радостью приму участие в вашем торжестве</label>
-                    </div>
-                    <button type="submit" class="submit-btn">Отправить ответ</button>
-                    <div id="formMessage" role="alert"></div>
+            
+            <button id="rsvp">Подтвердить присутствие <i class="heart fas fa-heart"></i></button>
+            
+            <div id="rsvpForm" class="hidden">
+                <h3>Подтвердите, пожалуйста, ваше присутствие</h3>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required><br>
+                    <input type="email" placeholder="Ваш email"><br>
+                    <input type="number" placeholder="Количество гостей" min="1" value="1"><br>
+                    <textarea placeholder="Ваши пожелания или комментарии"></textarea><br>
+                    <button type="submit">Отправить <i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
-        </section>
-    </main>
-    
-    <!-- Подвал -->
-    <footer class="footer">
-        <div class="container">
-            <p>Мы с нетерпением ждём этого дня и надеемся разделить его с вами!</p>
-            <p class="cursive">Анна & Михаил</p>
+            
+            <button id="backToInvite"><i class="fas fa-arrow-left"></i> Вернуться к приглашению</button>
+            
+            <div class="footer">
+                <p>С любовью, Анна и Дмитрий</p>
+                <div class="flower" style="animation-delay: 0.4s">🌹</div>
+            </div>
         </div>
-    </footer>
+    </div>
     
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showDetailsBtn = document.getElementById('showDetails');
+            const backToInviteBtn = document.getElementById('backToInvite');
+            const rsvpBtn = document.getElementById('rsvp');
+            const invitation = document.getElementById('invitation');
+            const details = document.getElementById('details');
+            const rsvpForm = document.getElementById('rsvpForm');
+            
+            // Анимация цветов
+            const flowers = document.querySelectorAll('.flower');
+            flowers.forEach((flower, index) => {
+                flower.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            // Показать детали приглашения с анимацией
+            showDetailsBtn.addEventListener('click', function() {
+                createConfetti();
+                invitation.style.animation = 'fadeOut 0.5s forwards';
+                setTimeout(() => {
+                    invitation.classList.add('hidden');
+                    details.classList.remove('hidden');
+                    details.style.animation = 'fadeIn 1s';
+                    
+                    // Анимация элементов в деталях
+                    animateDetails();
+                }, 500);
+            });
+            
+            // Вернуться к приглашению
+            backToInviteBtn.addEventListener('click', function() {
+                details.style.animation = 'fadeOut 0.5s forwards';
+                setTimeout(() => {
+                    details.classList.add('hidden');
+                    invitation.classList.remove('hidden');
+                    invitation.style.animation = 'fadeIn 1s';
+                }, 500);
+            });
+            
+            // Показать форму подтверждения
+            rsvpBtn.addEventListener('click', function() {
+                createConfetti();
+                rsvpForm.style.display = 'block';
+                rsvpForm.style.animation = 'slideUp 0.8s ease-out';
+                rsvpForm.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Анимация элементов в разделе details
+            function animateDetails() {
+                const elements = details.querySelectorAll('h1, p, .date, .place, .dress-code, button, .map');
+                elements.forEach((el, index) => {
+                    el.style.opacity = '0';
+                    el.style.animation = 'slideUp 0.8s ease-out forwards';
+                    el.style.animationDelay = `${index * 0.2}s`;
+                });
+            }
+            
+            // Создание конфетти
+            function createConfetti() {
+                const colors = ['#ff6b6b', '#ffa3a3', '#ffd166', '#06d6a0', '#118ab2', '#073b4c'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}vw`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = `${Math.random() * 10 + 5}px`;
+                    confetti.style.borderRadius = `${Math.random() > 0.5 ? '50%' : '0'}`;
+                    confetti.style.animation = `confetti ${Math.random() * 3 + 2}s linear forwards`;
+                    confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }
+            }
+            
+            // Обработка формы
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    createConfetti();
+                    alert('Спасибо за подтверждение! Мы рады будем видеть вас на нашем празднике!');
+                    rsvpForm.style.animation = 'fadeOut 0.5s forwards';
+                    setTimeout(() => {
+                        rsvpForm.classList.add('hidden');
+                    }, 500);
+                });
+            }
+            
+            // Плавное появление страницы
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1.5s ease-out';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 </body>
 </html>

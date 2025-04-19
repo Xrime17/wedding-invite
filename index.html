@@ -3,132 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на свадьбу Евгения и Валентины</title>
+    <title>Анна & Михаил | Свадьба 15.07.2024</title>
+    <meta name="description" content="Приглашение на свадьбу Анны и Михаила 15 июля 2024 года">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Фоновые элементы -->
-    <div class="bg-pattern"></div>
-    <div id="petals"></div>
+    <div id="petals" class="petals-container"></div>
     
-    <!-- Фоновая музыка -->
+    <!-- Аудио плеер (скрытый) -->
     <audio id="music" loop>
-        <source src="assets/music/new-name.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
+        <source src="assets/wedding-music.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элемент.
     </audio>
     
-    <!-- Кнопка музыки -->
-    <button id="musicBtn" onclick="toggleMusic()">♪</button>
+    <!-- Кнопка управления музыкой -->
+    <button id="musicBtn" class="music-btn" aria-label="Управление музыкой">♪</button>
     
     <!-- Основное содержимое -->
-    <div class="container">
-        <!-- Герой секция -->
-        <section class="hero-section">
-            <h1 class="couple-names animate__animated animate__fadeInDown">Евгений & Валентина</h1>
-            <p class="wedding-date animate__animated animate__fadeIn animate__delay-1s">27 / 04 / 2025</p>
-            <p class="tagline animate__animated animate__fadeIn animate__delay-2s">С любовью приглашаем вас разделить с нами самый важный день в нашей жизни</p>
-            <div class="scroll-down animate__animated animate__fadeIn animate__delay-3s animate__infinite">↓</div>
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero" aria-labelledby="mainHeading">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="mainHeading">Анна <span class="cursive">&</span> Михаил</h1>
+                    <h2>Приглашаем вас на нашу свадьбу</h2>
+                    <p class="date">15 Июля 2024</p>
+                </div>
+                <a href="#couple" class="scroll-down" aria-label="Прокрутить вниз">↓</a>
+            </div>
         </section>
         
-        <!-- Секция с фотографиями -->
-        <section class="photo-section">
-            <h2 class="section-title animate-on-scroll">Наши моменты</h2>
-            <p class="section-subtitle animate-on-scroll">Мы рады поделиться с вами частичкой нашего счастья</p>
-            
-            <div class="photo-grid">
-                <div class="photo-placeholder animate-on-scroll">
-                    <img src="assets/images/photo1.jpg" alt="Фото пары" class="couple-photo">
-                </div>
-                <div class="photo-placeholder animate-on-scroll" style="animation-delay: 0.2s">
-                    <img src="assets/images/photo2.jpg" alt="Фото пары" class="couple-photo">
-                </div>
-                <div class="photo-placeholder animate-on-scroll" style="animation-delay: 0.4s">
-                    <img src="assets/images/photo3.jpg" alt="Фото пары" class="couple-photo">
+        <!-- Секция пары -->
+        <section id="couple" class="section couple-section" aria-labelledby="coupleHeading">
+            <div class="container">
+                <h2 id="coupleHeading" class="section-title">Жених и Невеста</h2>
+                <div class="couple-container">
+                    <article class="couple">
+                        <img src="assets/bride.jpg" alt="Невеста Анна" class="couple-img" width="200" height="200">
+                        <h3 class="couple-name">Анна</h3>
+                        <p>Невеста</p>
+                    </article>
+                    <article class="couple">
+                        <img src="assets/groom.jpg" alt="Жених Михаил" class="couple-img" width="200" height="200">
+                        <h3 class="couple-name">Михаил</h3>
+                        <p>Жених</p>
+                    </article>
                 </div>
             </div>
         </section>
         
-        <!-- Секция деталей -->
-        <section class="details-section">
-            <h2 class="section-title animate-on-scroll">Детали мероприятия</h2>
-            <p class="section-subtitle animate-on-scroll">Сохраните дату и присоединяйтесь к нашему празднику</p>
-            
-            <div class="details-container">
-                <div class="detail-card animate-on-scroll">
-                    <div class="detail-icon">⏱️</div>
-                    <h3 class="detail-title">Когда</h3>
-                    <p>27 апреля 2025 года</p>
-                    <p>Начало в 16:00</p>
-                </div>
-                
-                <div class="detail-card animate-on-scroll" style="animation-delay: 0.2s">
-                    <div class="detail-icon">📍</div>
-                    <h3 class="detail-title">Где</h3>
-                    <p>Ресторан "Лебединое озеро"</p>
-                    <p>ул. Романтическая, 15</p>
-                </div>
-                
-                <div class="detail-card animate-on-scroll" style="animation-delay: 0.4s">
-                    <div class="detail-icon">👗</div>
-                    <h3 class="detail-title">Дресс-код</h3>
-                    <p>Вечерние наряды</p>
-                    <p>Цветовая гамма: пастельные тона</p>
+        <!-- История отношений -->
+        <section class="section story-section" aria-labelledby="storyHeading">
+            <div class="container">
+                <h2 id="storyHeading" class="section-title">Наша история</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-content">
+                            <time datetime="2018-06" class="timeline-date">Июнь 2018</time>
+                            <h3>Первая встреча</h3>
+                            <p>Мы познакомились на конференции по веб-разработке в Москве. Анна выступала с докладом, а Михаил задал ей вопрос, который перерос в часовую дискуссию за кофе.</p>
+                        </div>
+                        <img src="assets/first-meet.jpg" alt="Первая встреча" class="timeline-img" width="80" height="80">
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-content">
+                            <time datetime="2019-12" class="timeline-date">Декабрь 2019</time>
+                            <h3>Первое свидание</h3>
+                            <p>После года дружеского общения мы наконец отправились на первое официальное свидание в зимний парк. Горячий шоколад и катание на коньках сделали этот день незабываемым.</p>
+                        </div>
+                        <img src="assets/first-date.jpg" alt="Первое свидание" class="timeline-img" width="80" height="80">
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-content">
+                            <time datetime="2022-08" class="timeline-date">Август 2022</time>
+                            <h3>Переезд вместе</h3>
+                            <p>Мы решили съехаться и начали новую главу нашей жизни в уютной квартире с видом на парк. Это было время открытий, компромиссов и бесконечного счастья.</p>
+                        </div>
+                        <img src="assets/living-together.jpg" alt="Совместная жизнь" class="timeline-img" width="80" height="80">
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-content">
+                            <time datetime="2023-05" class="timeline-date">Май 2023</time>
+                            <h3>Предложение</h3>
+                            <p>Во время путешествия по Италии, на закате в Венеции, Михаил сделал предложение. Анна, конечно же, сказала "Да!" среди слез радости и аплодисментов случайных прохожих.</p>
+                        </div>
+                        <img src="assets/proposal.jpg" alt="Предложение" class="timeline-img" width="80" height="80">
+                    </article>
                 </div>
             </div>
         </section>
         
-        <!-- Секция RSVP -->
-        <section class="rsvp-section">
-            <h2 class="section-title animate-on-scroll">Подтвердите участие</h2>
-            <p class="section-subtitle animate-on-scroll">Пожалуйста, ответьте до 10 апреля 2025 года</p>
-            
-            <form id="guestForm" class="rsvp-form animate-on-scroll">
-                <div class="form-group">
-                    <label for="name">Ваше имя*</label>
-                    <input type="text" id="name" name="name" required>
+        <!-- Галерея -->
+        <section class="section gallery-section" aria-labelledby="galleryHeading">
+            <div class="container">
+                <h2 id="galleryHeading" class="section-title">Наши моменты</h2>
+                <div class="gallery">
+                    <figure class="gallery-item">
+                        <img src="assets/gallery1.jpg" alt="Фото 1" class="gallery-img" width="400" height="400">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/gallery2.jpg" alt="Фото 2" class="gallery-img" width="400" height="400">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/gallery3.jpg" alt="Фото 3" class="gallery-img" width="400" height="400">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/gallery4.jpg" alt="Фото 4" class="gallery-img" width="400" height="400">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/gallery5.jpg" alt="Фото 5" class="gallery-img" width="400" height="400">
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="assets/gallery6.jpg" alt="Фото 6" class="gallery-img" width="400" height="400">
+                    </figure>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">Ваш email*</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="guests">Количество гостей</label>
-                    <select id="guests" name="guests">
-                        <option value="1">Только я</option>
-                        <option value="2">Я + 1</option>
-                        <option value="3">Я + 2</option>
-                        <option value="4">Я + 3</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Ваши пожелания</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="isAttending" name="isAttending" checked>
-                    <label for="isAttending">С радостью приду!</label>
-                </div>
-                
-                <button type="submit" class="submit-btn">Отправить ответ</button>
-                <p id="formMessage" class="form-message"></p>
-            </form>
+            </div>
         </section>
         
-        <!-- Футер -->
-        <section class="footer">
-            <p>Ждём вас с нетерпением!</p>
-            <div class="signature">Евгений & Валентина</div>
+        <!-- Детали мероприятия -->
+        <section class="section details-section" aria-labelledby="detailsHeading">
+            <div class="container">
+                <h2 id="detailsHeading" class="section-title">Детали мероприятия</h2>
+                <div class="details-container">
+                    <article class="detail-card">
+                        <div class="detail-icon">💒</div>
+                        <h3>Церемония</h3>
+                        <p><time datetime="2024-07-15T16:00">15 Июля 2024, 16:00</time></p>
+                        <address>Храм Христа Спасителя<br>ул. Волхонка, 15, Москва</address>
+                    </article>
+                    <article class="detail-card">
+                        <div class="detail-icon">🍽️</div>
+                        <h3>Банкет</h3>
+                        <p><time datetime="2024-07-15T18:00">15 Июля 2024, 18:00</time></p>
+                        <address>Ресторан "Белый Лебедь"<br>Пресненская наб., 12, Москва</address>
+                    </article>
+                    <article class="detail-card">
+                        <div class="detail-icon">💃</div>
+                        <h3>После вечеринки</h3>
+                        <p><time datetime="2024-07-16T12:00">16 Июля 2024, 12:00</time></p>
+                        <address>Загородный клуб "Сосны"<br>Московская обл., 25 км от МКАД</address>
+                    </article>
+                </div>
+            </div>
         </section>
-    </div>
+        
+        <!-- Форма RSVP -->
+        <section class="section rsvp-section" aria-labelledby="rsvpHeading">
+            <div class="container">
+                <h2 id="rsvpHeading" class="section-title">Подтвердите участие</h2>
+                <form id="guestForm" class="rsvp-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Количество гостей</label>
+                        <select id="guests" name="guests" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ваши пожелания</label>
+                        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="isAttending" name="isAttending" checked>
+                        <label for="isAttending">Я с радостью приму участие в вашем торжестве</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить ответ</button>
+                    <div id="formMessage" role="alert"></div>
+                </form>
+            </div>
+        </section>
+    </main>
     
-    <script src="js/script.js"></script>
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <p>Мы с нетерпением ждём этого дня и надеемся разделить его с вами!</p>
+            <p class="cursive">Анна & Михаил</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>

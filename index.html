@@ -12,11 +12,12 @@
 </head>
 <body>
     <!-- Фоновые элементы -->
-    <div class="bg-hearts"></div>
+    <div class="bg-pattern"></div>
+    <div id="petals"></div>
     
     <!-- Фоновая музыка -->
     <audio id="music" loop>
-        <source src="assets/music/romantic.mp3" type="audio/mpeg">
+        <source src="assets/music/new-name.mp3" type="audio/mpeg">
         Ваш браузер не поддерживает аудио.
     </audio>
     
@@ -40,13 +41,13 @@
             
             <div class="photo-grid">
                 <div class="photo-placeholder animate-on-scroll">
-                    <img src="assets/images/photo1.jpg" alt="Фото пары 1" class="couple-photo">
+                    <img src="assets/images/photo1.jpg" alt="Фото пары" class="couple-photo">
                 </div>
                 <div class="photo-placeholder animate-on-scroll" style="animation-delay: 0.2s">
-                    <img src="assets/images/photo2.jpg" alt="Фото пары 2" class="couple-photo">
+                    <img src="assets/images/photo2.jpg" alt="Фото пары" class="couple-photo">
                 </div>
                 <div class="photo-placeholder animate-on-scroll" style="animation-delay: 0.4s">
-                    <img src="assets/images/photo3.jpg" alt="Фото пары 3" class="couple-photo">
+                    <img src="assets/images/photo3.jpg" alt="Фото пары" class="couple-photo">
                 </div>
             </div>
         </section>
@@ -60,15 +61,15 @@
                 <div class="detail-card animate-on-scroll">
                     <div class="detail-icon">⏱️</div>
                     <h3 class="detail-title">Когда</h3>
-                    <p>28 августа 2025 года</p>
+                    <p>27 апреля 2025 года</p>
                     <p>Начало в 16:00</p>
                 </div>
                 
                 <div class="detail-card animate-on-scroll" style="animation-delay: 0.2s">
                     <div class="detail-icon">📍</div>
                     <h3 class="detail-title">Где</h3>
-                    <p>Ресторан "Дворянское гнездо"</p>
-                    <p>Болшевское ш., 35, Королёв</p>
+                    <p>Ресторан "Лебединое озеро"</p>
+                    <p>ул. Романтическая, 15</p>
                 </div>
                 
                 <div class="detail-card animate-on-scroll" style="animation-delay: 0.4s">
@@ -83,26 +84,26 @@
         <!-- Секция RSVP -->
         <section class="rsvp-section">
             <h2 class="section-title animate-on-scroll">Подтвердите участие</h2>
-            <p class="section-subtitle animate-on-scroll">Пожалуйста, ответьте до 25 мая 2025 года</p>
+            <p class="section-subtitle animate-on-scroll">Пожалуйста, ответьте до 10 апреля 2025 года</p>
             
             <form id="guestForm" class="rsvp-form animate-on-scroll">
                 <div class="form-group">
-                    <label for="name">Ваше имя</label>
+                    <label for="name">Ваше имя*</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Ваш email</label>
+                    <label for="email">Ваш email*</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="guests">Количество гостей</label>
                     <select id="guests" name="guests">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option value="1">Только я</option>
+                        <option value="2">Я + 1</option>
+                        <option value="3">Я + 2</option>
+                        <option value="4">Я + 3</option>
                     </select>
                 </div>
                 
@@ -111,14 +112,13 @@
                     <textarea id="message" name="message" rows="4"></textarea>
                 </div>
                 
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="isAttending" checked>
-                        С радостью приду!
-                    </label>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="isAttending" name="isAttending" checked>
+                    <label for="isAttending">С радостью приду!</label>
                 </div>
                 
-                <button type="submit" class="submit-btn">Отправить</button>
+                <button type="submit" class="submit-btn">Отправить ответ</button>
+                <p id="formMessage" class="form-message"></p>
             </form>
         </section>
         

@@ -3,53 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на свадьбу</title>
-    <link rel="stylesheet" href="style.css">
-    <div class="invitation">
-        <section class="header">
-          <h1>Анна & Иван</h1>
-          <p>27/04/2025</p>
-          <p class="tagline">С любовью приглашаем вас на нашу свадьбу</p>
-        </section>
-      
-        <section class="form-section">
-          <!-- Ваша форма здесь -->
-        </section>
-      
-        <section class="footer">
-          <p>Ждём вас с нетерпением!</p>
-          <div class="signature">Анна & Иван</div>
-        </section>
-      </div>
+    <title>Приглашение на свадьбу Евгения и Валентины</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Фоновые элементы -->
+    <div class="bg-hearts"></div>
+    
     <!-- Фоновая музыка -->
     <audio id="music" loop>
-        <source src="assets/music/new-name.mp3" type="audio/mpeg">
+        <source src="assets/music/romantic.mp3" type="audio/mpeg">
         Ваш браузер не поддерживает аудио.
     </audio>
-
+    
     <!-- Кнопка музыки -->
-    <button id="musicBtn" onclick="toggleMusic()">🔊 Включить музыку</button>
-
+    <button id="musicBtn" onclick="toggleMusic()">♪</button>
+    
     <!-- Основное содержимое -->
-    <div class="invitation">
-        <section class="header">
-          <h1>Анна & Иван</h1>
-          <p>27/04/2025</p>
-          <p class="tagline">С любовью приглашаем вас на нашу свадьбу</p>
+    <div class="container">
+        <!-- Герой секция -->
+        <section class="hero-section">
+            <h1 class="couple-names animate__animated animate__fadeInDown">Евгений & Валентина</h1>
+            <p class="wedding-date animate__animated animate__fadeIn animate__delay-1s">27 / 04 / 2025</p>
+            <p class="tagline animate__animated animate__fadeIn animate__delay-2s">С любовью приглашаем вас разделить с нами самый важный день в нашей жизни</p>
+            <div class="scroll-down animate__animated animate__fadeIn animate__delay-3s animate__infinite">↓</div>
         </section>
-      
-        <section class="form-section">
-          <!-- Ваша форма здесь -->
+        
+        <!-- Секция с фотографиями -->
+        <section class="photo-section">
+            <h2 class="section-title animate-on-scroll">Наши моменты</h2>
+            <p class="section-subtitle animate-on-scroll">Мы рады поделиться с вами частичкой нашего счастья</p>
+            
+            <div class="photo-grid">
+                <div class="photo-placeholder animate-on-scroll">
+                    <img src="assets/images/photo1.jpg" alt="Фото пары 1" class="couple-photo">
+                </div>
+                <div class="photo-placeholder animate-on-scroll" style="animation-delay: 0.2s">
+                    <img src="assets/images/photo2.jpg" alt="Фото пары 2" class="couple-photo">
+                </div>
+                <div class="photo-placeholder animate-on-scroll" style="animation-delay: 0.4s">
+                    <img src="assets/images/photo3.jpg" alt="Фото пары 3" class="couple-photo">
+                </div>
+            </div>
         </section>
-      
+        
+        <!-- Секция деталей -->
+        <section class="details-section">
+            <h2 class="section-title animate-on-scroll">Детали мероприятия</h2>
+            <p class="section-subtitle animate-on-scroll">Сохраните дату и присоединяйтесь к нашему празднику</p>
+            
+            <div class="details-container">
+                <div class="detail-card animate-on-scroll">
+                    <div class="detail-icon">⏱️</div>
+                    <h3 class="detail-title">Когда</h3>
+                    <p>28 августа 2025 года</p>
+                    <p>Начало в 16:00</p>
+                </div>
+                
+                <div class="detail-card animate-on-scroll" style="animation-delay: 0.2s">
+                    <div class="detail-icon">📍</div>
+                    <h3 class="detail-title">Где</h3>
+                    <p>Ресторан "Дворянское гнездо"</p>
+                    <p>Болшевское ш., 35, Королёв</p>
+                </div>
+                
+                <div class="detail-card animate-on-scroll" style="animation-delay: 0.4s">
+                    <div class="detail-icon">👗</div>
+                    <h3 class="detail-title">Дресс-код</h3>
+                    <p>Вечерние наряды</p>
+                    <p>Цветовая гамма: пастельные тона</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Секция RSVP -->
+        <section class="rsvp-section">
+            <h2 class="section-title animate-on-scroll">Подтвердите участие</h2>
+            <p class="section-subtitle animate-on-scroll">Пожалуйста, ответьте до 25 мая 2025 года</p>
+            
+            <form id="guestForm" class="rsvp-form animate-on-scroll">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Ваш email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Количество гостей</label>
+                    <select id="guests" name="guests">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Ваши пожелания</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="isAttending" checked>
+                        С радостью приду!
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </section>
+        
+        <!-- Футер -->
         <section class="footer">
-          <p>Ждём вас с нетерпением!</p>
-          <div class="signature">Евгений & Валентина</div>
+            <p>Ждём вас с нетерпением!</p>
+            <div class="signature">Евгений & Валентина</div>
         </section>
-      </div>
-
-    <script src="script.js"></script>
+    </div>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>
